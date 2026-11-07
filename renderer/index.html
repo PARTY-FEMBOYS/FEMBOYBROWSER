@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: file: https: http:; media-src 'self' file:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+<title>Femboy Browser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bg">
+    <video id="bgvid" autoplay loop muted playsinline></video>
+    <img id="bgimg" alt="">
+    <div id="shade"></div>
+  </div>
+
+  <div id="app">
+    <header id="titlebar">
+      <div id="tabs"></div>
+      <button id="newtab" class="ib sm" data-ic="plus" title="Новая вкладка (Ctrl+T)"></button>
+      <div id="winctl">
+        <button id="w-min" data-ic="min" title="Свернуть"></button>
+        <button id="w-max" data-ic="max" title="Развернуть"></button>
+        <button id="w-close" class="danger" data-ic="close" title="Закрыть"></button>
+      </div>
+    </header>
+
+    <div id="toolbar" class="glass">
+      <button id="b-back" class="ib" data-ic="back" title="Назад (Alt+←)"></button>
+      <button id="b-fwd" class="ib" data-ic="fwd" title="Вперёд (Alt+→)"></button>
+      <button id="b-reload" class="ib" data-ic="reload" title="Обновить (F5)"></button>
+      <button id="b-home" class="ib" data-ic="home" title="Домой"></button>
+      <div id="omni">
+        <span id="omni-ic" data-ic="search"></span>
+        <input id="url" type="text" spellcheck="false" placeholder="Введи адрес или запрос…" autocomplete="off">
+      </div>
+      <button id="b-star" class="ib" data-ic="star" title="В закладки (Ctrl+D)"></button>
+      <button id="b-theme" class="ib" data-ic="palette" title="Темы"></button>
+      <button id="b-menu" class="ib" data-ic="menu" title="Меню"></button>
+    </div>
+
+    <div id="findbar" class="glass" hidden>
+      <input id="find-in" type="text" placeholder="Поиск на странице…" spellcheck="false">
+      <span id="find-count"></span>
+      <button class="ib sm" id="find-prev" data-ic="up"></button>
+      <button class="ib sm" id="find-next" data-ic="down"></button>
+      <button class="ib sm" id="find-close" data-ic="close"></button>
+    </div>
+
+    <main id="main">
+      <section id="content">
+        <div id="start">
+          <div id="sparkles"></div>
+          <div id="clock"></div>
+          <div id="date"></div>
+          <h1 id="hello">✿ Femboy Browser ✿</h1>
+          <div id="sub">быстрый · милый · полностью твой</div>
+          <div id="startsearch" class="glass"><span data-ic="search"></span><input id="start-in" type="text" placeholder="Поиск или адрес…" spellcheck="false" autocomplete="off"></div>
+          <div id="tiles"></div>
+        </div>
+        <img id="freeze" alt="" hidden>
+      </section>
+
+      <aside id="panel">
+        <div id="panel-inner" class="glass">
+          <div id="panel-head"><h2 id="panel-title"></h2><button id="panel-close" class="ib sm" data-ic="close"></button></div>
+          <div id="panel-body"></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div id="theme-menu" class="popup glass" hidden></div>
+  <div id="main-menu" class="popup glass" hidden></div>
+  <div id="toasts"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
