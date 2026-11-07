@@ -1,0 +1,30 @@
+{
+  "name": "femboy-browser",
+  "productName": "Femboy Browser",
+  "version": "1.0.0",
+  "description": "Femboy Browser — кастомизируемый браузер с анимированными фонами",
+  "main": "main.js",
+  "author": "DjAnime",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win nsis zip"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.djanime.femboybrowser",
+    "productName": "Femboy Browser",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "renderer/**/*", "package.json"],
+    "extraFiles": [
+      { "from": "themes", "to": "themes" },
+      { "from": "backgrounds", "to": "backgrounds" }
+    ],
+    "win": { "target": ["nsis", "zip"] },
+    "nsis": { "oneClick": false, "perMachine": false, "allowToChangeInstallationDirectory": true }
+  }
+}
